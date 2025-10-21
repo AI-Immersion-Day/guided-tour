@@ -15,21 +15,16 @@ app.get('/health', (c) => {
   return c.json({ status: 'ok', timestamp: new Date().toISOString() })
 })
 
-// Example API endpoint
-app.get('/api/hello', (c) => {
-  return c.json({ message: 'Hello from Hono API!' })
-})
-
-// Example route with parameters
-app.get('/api/greet/:name', (c) => {
-  const name = c.req.param('name')
-  return c.json({ message: `Hello, ${name}!` })
-})
-
-// Example POST endpoint
-app.post('/api/data', async (c) => {
+// Hello world endpoint - receives name and returns greeting
+app.post('/api/hello', async (c) => {
   const body = await c.req.json()
-  return c.json({ received: body, timestamp: new Date().toISOString() })
+  const { name } = body
+  
+  if (!name || typeof name !== 'string' || !name.trim()) {
+    return c.json({ error: 'Name is required' }, 400)
+  }
+  
+  return c.json({ message: `Hello ${name.trim()}!` })
 })
 
 const port = 3001

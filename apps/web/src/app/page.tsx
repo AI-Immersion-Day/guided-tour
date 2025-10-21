@@ -7,11 +7,35 @@ import { toast } from "sonner";
 
 export default function Home() {
   const [name, setName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (name.trim()) {
-      toast(`Hello ${name.trim()}`);
+    
+    if (!name.trim()) return;
+    
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch('http://localhost:3001/api/hello', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: name.trim() }),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to get response from API');
+      }
+      
+      toast(data.message);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Failed to connect to API');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -32,9 +56,9 @@ export default function Home() {
           <Button 
             type="submit" 
             className="w-full"
-            disabled={!name.trim()}
+            disabled={!name.trim() || isLoading}
           >
-            Submit
+            {isLoading ? "Submitting..." : "Submit"}
           </Button>
         </form>
       </div>
