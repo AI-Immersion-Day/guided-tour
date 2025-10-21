@@ -25,7 +25,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const stored = localStorage.getItem('trading-storage');
+                  if (stored) {
+                    const { state } = JSON.parse(stored);
+                    if (state?.theme) {
+                      const { mode, accent } = state.theme;
+                      document.documentElement.classList.add(mode, 'accent-' + accent);
+                    }
+                  }
+                } catch (e) {
+                  console.error('Failed to apply theme from localStorage:', e);
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

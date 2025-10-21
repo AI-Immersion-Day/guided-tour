@@ -10,8 +10,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const root = document.documentElement
+    
+    // Remove all possible theme classes first
     root.classList.remove("light", "dark", "accent-pink", "accent-blue")
-    root.classList.add(theme.mode, `accent-${theme.accent}`)
+    
+    // Add mode class first (light/dark)
+    root.classList.add(theme.mode)
+    
+    // Then add accent class
+    root.classList.add(`accent-${theme.accent}`)
   }, [theme])
 
   return <>{children}</>
