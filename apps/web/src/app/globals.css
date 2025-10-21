@@ -120,3 +120,28 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom accent theme overrides for pink and blue variants */
+.accent-pink {
+  --accent: oklch(0.697 0.185 349.761);
+  --accent-foreground: oklch(1 0 0);
+  --ring: oklch(0.697 0.185 349.761);
+}
+
+.accent-pink.dark {
+  --accent: oklch(0.697 0.185 349.761);
+  --accent-foreground: oklch(1 0 0);
+  --ring: oklch(0.697 0.185 349.761);
+}
+
+.accent-blue {
+  --accent: oklch(0.6 0.215 252.417);
+  --accent-foreground: oklch(1 0 0);
+  --ring: oklch(0.6 0.215 252.417);
+}
+
+.accent-blue.dark {
+  --accent: oklch(0.6 0.215 252.417);
+  --accent-foreground: oklch(1 0 0);
+  --ring: oklch(0.6 0.215 252.417);
+}

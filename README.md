@@ -1,6 +1,10 @@
 # AI Immersion Day - Guided Tour
 
-This is a sample web application that you can practice your agentic coding skills on!
+This repository contains a sample web application that you can practice your agentic coding skills on. It's a mock institutional trading platform. Some parts have been implemented, others are left up to you.
+
+There are plenty of improvements and fixes you can make to the application in order to learn the ins and outs of agentic coding!
+
+![Demo trading app dashboard screenshot](docs/images/apex-trading-dashboard.png)
 
 ## Project Structure
 
