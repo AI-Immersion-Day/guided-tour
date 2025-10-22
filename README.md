@@ -127,6 +127,43 @@ npm install <package> --workspace=apps/api
 - Each application has its own TypeScript configuration
 - Changes to either application will hot reload automatically during development
 
+## Testing
+
+The web application includes Jest and React Testing Library for unit testing components.
+
+### Running Tests
+
+```bash
+# Run all tests
+npm run test --workspace=apps/web
+
+# Run tests in watch mode
+npm run test:watch --workspace=apps/web
+
+# Run tests with coverage report
+npm run test:coverage --workspace=apps/web
+```
+
+### Example Test
+
+An example test has been provided for the `EmptyState` component (`apps/web/src/components/empty-state.test.tsx`). This test demonstrates:
+
+- Basic component rendering
+- Testing with default and custom props
+- Querying elements
+- Accessibility-focused testing
+
+### Exercise for Participants
+
+This example test serves as a foundation for workshop participants to practice using AI coding agents to:
+
+- Expand test coverage to other components in the project
+- Add more complex test scenarios (user interactions, async behavior, etc.)
+- Learn different testing patterns and best practices
+- Practice prompting AI agents to generate and refine tests
+
+Use your AI coding agent to help build comprehensive test coverage throughout the application!
+
 ## Example Tasks
 
 Looking for ideas on what to build or improve? Check out our [Example Tasks](docs/EXAMPLE_TASKS.md) document, which contains 50 tasks you can tackle using your AI coding agent to practice agentic coding across the full Software Development Lifecycle.
