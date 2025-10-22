@@ -101,9 +101,8 @@ npm run build:api
 #### Available API Endpoints
 
 - `GET /health` - Health check endpoint
-- `POST /api/hello` - Hello world endpoint that receives a name and returns a personalized greeting
-  - Request body: `{ "name": "string" }`
-  - Response: `{ "message": "Hello {name}!" }`
+- `GET /api/indices` - Returns market indices data
+- `GET /api/market-news` - Returns market news data
 
 ## Workspace Commands
 

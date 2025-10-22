@@ -16,18 +16,6 @@ app.get('/health', (c) => {
   return c.json({ status: 'ok', timestamp: new Date().toISOString() })
 })
 
-// Hello world endpoint - receives name and returns greeting
-app.post('/api/hello', async (c) => {
-  const body = await c.req.json()
-  const { name } = body
-  
-  if (!name || typeof name !== 'string' || !name.trim()) {
-    return c.json({ error: 'Name is required' }, 400)
-  }
-  
-  return c.json({ message: `Hello ${name.trim()}!` })
-})
-
 // Market data endpoints
 app.get('/api/indices', (c) => {
   try {
