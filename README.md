@@ -2,9 +2,20 @@
 
 This repository contains a sample web application that you can practice your agentic coding skills on. It's a mock institutional trading platform. Some parts have been implemented, others are left up to you.
 
-There are plenty of improvements and fixes you can make to the application in order to learn the ins and outs of agentic coding!
+There are plenty of improvements and fixes you can make to the application in order to learn the ins and outs of agentic coding. See the list of [example tasks](#example-tasks) for ideas!
+
+Here's what the app should look like when you get it running:
 
 ![Demo trading app dashboard screenshot](docs/images/apex-trading-dashboard.png)
+
+## Table of Contents
+
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Applications](#applications)
+- [Workspace Commands](#workspace-commands)
+- [Development Tips](#development-tips)
+- [Example Tasks](#example-tasks)
 
 ## Project Structure
 
@@ -115,3 +126,19 @@ npm install <package> --workspace=apps/api
 - CORS is configured to allow requests from the web app
 - Each application has its own TypeScript configuration
 - Changes to either application will hot reload automatically during development
+
+## Example Tasks
+
+Looking for ideas on what to build or improve? Check out our [Example Tasks](docs/EXAMPLE_TASKS.md) document, which contains 50 tasks you can tackle using your AI coding agent to practice agentic coding across the full Software Development Lifecycle.
+
+These tasks range from basic discovery and documentation to complex feature implementation and testing, covering areas such as:
+
+- **Discovery**: Understanding the codebase and architecture
+- **Feature Implementation**: Building new functionality (order management, real-time updates, charting, etc.)
+- **Testing**: Unit, integration, E2E, and accessibility testing
+- **Performance**: Optimization and benchmarking
+- **Security**: Vulnerability scanning and hardening
+- **Documentation**: Architecture diagrams, API docs, and ADRs
+- **UX/UI**: Improving user experience and interactions
+
+The tasks are designed to work with the available MCP tools including Playwright, Chrome DevTools, Context7, and web search capabilities.
